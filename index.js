@@ -25,6 +25,6 @@ app.use('usuarios', usuariosRoutes);
 app.use('/auth', authRoutes);
 
 // puerto y arranque del servidor
-app.listen(process.env.PORT || 4000, () => {
+app.listen(process.env.PORT, () => {
     console.log('Servidor Funcionando');
 });
