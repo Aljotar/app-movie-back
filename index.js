@@ -8,8 +8,10 @@ const authRoutes = require('./routes/authRoutes');
 // crear el servidor
 const app = express();
 
+const whiteList = ['http://localhost:4000','http://localhost:3000','https://app-movie-pop.herokuapp.com/']
+
 // Permitir acceso, cors
-app.use(cors());
+app.use(cors({origin: whiteList}));
 app.use(morgan('dev'));
 
 //Conectar a mongodb
@@ -25,6 +27,6 @@ app.use('usuarios', usuariosRoutes);
 app.use('/auth', authRoutes);
 
 // puerto y arranque del servidor
-app.listen(process.env.PORT, () => {
+app.listen(process.env.PORT || 4000, () => {
     console.log('Servidor Funcionando');
 });
