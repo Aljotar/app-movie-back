@@ -21,7 +21,7 @@ app.use(express.json({ extended: true }));
 app.use(express.urlencoded({ extended: true }));
 
 //importar rutas
-app.use('usuarios', usuariosRoutes);
+app.use('/usuarios', usuariosRoutes);
 app.use('/auth', authRoutes);
 
 // puerto y arranque del servidor
